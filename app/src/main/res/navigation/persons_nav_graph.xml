@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/persons_nav_graph"
+    app:startDestination="@id/savedPersonFragment">
+
+    <fragment
+        android:id="@+id/savedPersonFragment"
+        android:name="com.example.personsmanager.ui.fragment.SavedPersonFragment"
+        android:label="SavedPersonFragment" >
+        <action
+            android:id="@+id/action_savedPersonFragment_to_personDetailFragment"
+            app:destination="@id/personDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_savedPersonFragment_to_formularyFragment"
+            app:destination="@id/formularyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/formularyFragment"
+        android:name="com.example.personsmanager.ui.fragment.FormularyFragment"
+        android:label="FormularyFragment" />
+    <fragment
+        android:id="@+id/personDetailFragment"
+        android:name="com.example.personsmanager.ui.fragment.PersonDetailFragment"
+        android:label="PersonDetailFragment" >
+        <argument
+            android:name="personWithAddres"
+            app:argType="com.example.personsmanager.data.model.relations.PersonWithAddresses" />
+    </fragment>
+</navigation>
