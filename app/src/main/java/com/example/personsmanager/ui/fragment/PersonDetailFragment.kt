@@ -25,12 +25,12 @@ class PersonDetailFragment:Fragment(R.layout.fragment_person_detail) {
         viewModel = ViewModelProvider(this, viewModelProvider).get(PersonViewModel::class.java)
 
         val person = args.personWithAddres.person
-        val addresses = args.personWithAddres.addresses
-        val detailAddressesText = addresses.forEach{it.addressDetail}
+        val addressesDetails = args.personWithAddres.addresses
+        val detailAddressesText = addressesDetails.forEach{it.addressDetail}
 
         detailTvName.text = detailTvName.text.toString() + person.name +" "+person.lastName
         detailTvAge.text = detailTvAge.text.toString()+" "+person.age.toString()
         detailTvDirections.text = detailTvDirections.text.toString() +" "+
-                "\n"+addresses
+                "\n"+addressesDetails
     }
 }
